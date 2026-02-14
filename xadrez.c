@@ -69,7 +69,7 @@ void bispo(char d[], int s){
         }
         if (s>0){
             printf("%s \n", d);
-            torre(d, s-1);
+            bispo(d, s-1);
         }
         if (s==steps){
             printf("Bispo se moveu %d casas para %s \n\n", s, d);
@@ -84,16 +84,25 @@ void cavalo(char d[]){
         {
             printf("Cavalo não se move em verticais ou horizontais\n\n");
             return;
-        } else{
-            for(int i = 0; i < 1; i++){
-                for(int j=0; j<2; j++){
-                    printf("cima");
+        } 
+        else {
+        for(int i = 0; i < 1; i++){
+            for(int j=0; j<2; j++){
+                if(strcmp(d, "Cima + Direita") == 0 || strcmp(d, "Cima + Esquerda") == 0){
+                    printf("Cima\n");
                 }
-                printf("direita");
-                
+                else if(strcmp(d, "Baixo + Direita") == 0 || strcmp(d, "Baixo + Esquerda") == 0){
+                    printf("Baixo\n");
+                }
+            }
+            if(strcmp(d, "Cima + Direita") == 0 || strcmp(d, "Baixo + Direita") == 0){
+                printf("Direita\n");
+            } else {
+                printf("Esquerda\n");
             }
         }
     }
+        printf("Cavalo se moveu 3 casas para %s\n\n", d);
 }
 
 int main(){
@@ -146,6 +155,7 @@ int main(){
 
     printf("Demarque uma direção com WASD para o Cavalo:\n");
     scanf("%s", dir);
+
     printf("\n");
 
     posicao(dir);
