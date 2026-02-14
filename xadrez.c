@@ -85,12 +85,12 @@ void cavalo(char d[]){
             printf("Cavalo não se move em verticais ou horizontais\n\n");
             return;
         } else{
-            if(strcmp()){
             for(int i = 0; i < 1; i++){
                 for(int j=0; j<2; j++){
                     printf("cima");
                 }
                 printf("direita");
+                
             }
         }
     }
